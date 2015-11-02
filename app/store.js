@@ -20,9 +20,8 @@ function addedCount(state, pl) {
     });
 }
 
-function collectCounter(state, pl){
-    console.log('--------------',state.get('count'))
-    if(state.get('count')){
+function collectCounter(state, pl) {
+    if (state.get('count')) {
         return state.get('count');
     }
     return state;
