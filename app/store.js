@@ -7,7 +7,6 @@ module.exports = Store({
     },
     initialize: function () {
         this.on('ADD_COUNT', addedCount);
-        this.on('GET_COUNT', collectCounter);
     }
 });
 
@@ -18,11 +17,4 @@ function addedCount(state, pl) {
     return state.updateIn(['count'], function (e) {
         return e + 1;
     });
-}
-
-function collectCounter(state, pl) {
-    if (state.get('count')) {
-        return state.get('count');
-    }
-    return state;
 }

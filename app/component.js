@@ -8,14 +8,14 @@ Reactor.registerStores({
 });
 
 module.exports = React.createClass({
-    getInitialState: function () {
+    mixins: [Reactor.ReactMixin],
+    getDataBindings: function () {
         return {
-            count: Reactor.evaluate(['counter', 'count'])
+            count: ['counter', 'count']
         }
     },
     incrementCount: function () {
         Actions.addCounter();
-        this.setState({count: Reactor.evaluate(['counter', 'count'])})
     },
     render: function () {
         return (
